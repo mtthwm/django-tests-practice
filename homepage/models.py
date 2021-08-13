@@ -15,8 +15,16 @@ class BlogPostManager(models.Manager):
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=250, null=False)
+    title_slug = models.SlugField(primary_key=True, unique=True, max_length=50)
     content = RichTextField()
     published = models.BooleanField(default=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     objects = BlogPostManager()
+
+class PortfolioProject(models.Model):
+    title = models.CharField(max_length=250, null=False)
+    title_slug = models.SlugField(primary_key=True, unique=True, max_length=50)
+    description = RichTextField()
+    ongoing = models.BooleanField(default=False)
+    main_image = models.ImageField()

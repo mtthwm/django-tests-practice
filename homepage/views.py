@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
 from homepage.models import BlogPost
 from homepage.forms import UserForm
 from django.contrib.auth import authenticate, login
@@ -11,6 +12,11 @@ class IndexView(View):
     def get(self, request, *args, **kwargs):
         blogs = BlogPost.objects.published()
         return render(request, 'homepage/index.html', context={'blogs': blogs})
+
+class BlogView(View):
+    def get(self, request, *args, **kwargs):
+        blog = get_object_or_404(BlogPost, pk=kwargs.get('blog_pk'))
+        return render(request, 'homepage/blog.html', context={'blog': blog})
 
 class UserView(View):
     def post(self, request, *args, **kwargs):

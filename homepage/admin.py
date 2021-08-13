@@ -13,6 +13,7 @@ class BlogPostForm(forms.ModelForm):
 
 class BlogPostAdmin(admin.ModelAdmin):
     form = BlogPostForm
+    prepopulated_fields = {'title_slug': ('title',)}
 
 class UserAdmin(admin.ModelAdmin):
     pass
