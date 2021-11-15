@@ -1,22 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="/">Matthew Morales</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-toggle="collapse" data-bs-target="#navbarNav" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">About</a>
+            <a class="nav-link" aria-current="page" href="{% url 'homepage:about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Resume</a>
+            <a class="nav-link" href="/resume">Resume</a>
           </li>
+          {% comment %} <li class="nav-item">
+            <a class="nav-link" href="/projects">Projects</a>
+          </li> {% endcomment %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="/blog">Blog</a>
           </li>
         </ul>
       </div>

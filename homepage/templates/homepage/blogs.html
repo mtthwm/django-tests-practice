@@ -1,11 +1,12 @@
 {% extends 'homepage/base.htm' %}
 {% block content %}
-    <div class="continer">
-        <div class="row d-flex justify-content-center">
-            <div class="col-10">
+<div class="container py-5 h-100">
+    <div class="row">
+        <div class="col-12">
+            {% if blogs %}
                 {% for blog in blogs %}
                     <div class="row d-flex justify-content-center">
-                        <div class="card mt-5">
+                        <div class="card w-100 mt-5">
                             <div class="card-body">
                                 <a href="{% url 'homepage:blog' blog_pk=blog.title_slug %}"><h1 class="card-title">{{blog.title}}</h1></a>
                                 <h5 class="card-subtitle">By {{blog.author.first_name}} {{blog.author.last_name}}</h5>
@@ -13,7 +14,10 @@
                         </div>
                     </div>
                 {% endfor %}
-            </div>
+            {% else %}
+                <h1>Nothing to see here, yet...</h1>
+            {% endif %}
         </div>
-    <div>
+    </div>
+</div>
 {% endblock content %}

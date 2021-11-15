@@ -1,0 +1,26 @@
+{% extends 'homepage/base.htm' %}
+{% block content %}
+<div class="container">
+    <div class="row my-5">
+        <div class="col-6 d-flex justify-content-center align-items-center">
+            <img width="50%" src="https://mtthwmrls-personal-website-bucket.s3.us-east-2.amazonaws.com/public/general/ProfilePicture.jpg"/>
+        </div>
+        <div class="col-6 d-flex justify-content-center align-items-center">
+            <div class="bg-secondary p-4 about-me-blub-container">
+                <h1>Matthew Morales</h1>
+                <p>Hi! I'm a web developer and computer science student. I also try to make games. Thanks for stopping by!</p>
+                <a class="btn btn-outline-dark" href="{% url 'homepage:resume' %}">Check out my resume</a>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-12">
+            <div class="bg-secondary p-5 text-center">
+                <h3>While you're here...</h3>
+                <p>I'll be posting devlogs of various projects i'm working on in my blog, so make sure to check back every now and then!</p>
+                <a class="btn btn-outline-dark" href="{% url 'homepage:blogs' %}">Check out my blog</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -32,7 +32,7 @@ class PortfolioProject(models.Model):
     title_slug = models.SlugField(primary_key=True, unique=True, max_length=50)
     description = RichTextUploadingField()
     ongoing = models.BooleanField(default=False)
-    main_image = models.ImageField()
+    main_image = models.ImageField(upload_to='public/portfolioimages')
 
 class PostTag (models.Model):
     post_ref = models.ForeignKey(BlogPost, on_delete=models.DO_NOTHING, null=False)

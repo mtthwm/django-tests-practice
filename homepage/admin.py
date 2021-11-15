@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth import get_user_model
+from django.contrib.auth.admin import UserAdmin
 from django import forms
 from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
@@ -16,7 +17,7 @@ class BlogPostAdmin(admin.ModelAdmin):
     form = BlogPostForm
     prepopulated_fields = {'title_slug': ('title',)}
 
-class UserAdmin(admin.ModelAdmin):
+class UserAdmin(UserAdmin):
     pass
 
 class PostTagAdmin(admin.ModelAdmin):
