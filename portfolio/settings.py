@@ -30,7 +30,12 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['localhost', 'mtthwmrls-portfolio.herokuapp.com', 'matthew-morales.com']
+ALLOWED_HOSTS = [
+    'localhost', 
+    'mtthwmrls-portfolio.herokuapp.com', 
+    'matthew-morales.com', 
+    'www.matthew-morales.com'
+    ]
 
 
 # Application definition
