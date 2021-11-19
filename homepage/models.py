@@ -17,7 +17,11 @@ class BlogPostManager(models.Manager):
 
 class PostTag (models.Model):
     title = models.CharField(max_length=50, null=False)
-    color = ColorField(default="#0099cc")
+    color = ColorField(default='#0099cc')
+    text_color = ColorField(default='#000000')
+
+    def __str__(self):
+        return f"{self.title}"
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=250, null=False)

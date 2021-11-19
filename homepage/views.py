@@ -12,7 +12,7 @@ User = get_user_model()
 # Create your views here.
 class BlogView(View):
     def get(self, request, *args, **kwargs):
-        blog = get_object_or_404(BlogPost, pk=kwargs.get('blog_pk'))
+        blog = get_object_or_404(BlogPost, pk=kwargs.get('blog_pk'), published=True)
         return render(request, 'homepage/blog.html', context={'blog': blog})
 
 class BlogListView(View):
