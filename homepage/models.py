@@ -22,6 +22,7 @@ class PostTag (models.Model):
 class BlogPost(models.Model):
     title = models.CharField(max_length=250, null=False)
     title_slug = models.SlugField(primary_key=True, unique=True, max_length=50)
+    date_published = models.DateField()
     content = RichTextUploadingField()
     published = models.BooleanField(default=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
